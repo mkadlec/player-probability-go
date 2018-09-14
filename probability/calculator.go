@@ -1,7 +1,6 @@
 package probability
 
 import (
-	"fmt"
 	"math"
 	"math/rand"
 	"time"
@@ -28,18 +27,14 @@ func (Calculator *Calculator) HowManyPlayers() int {
 		for playerIndex := 0; playerIndex < length; playerIndex++ {
 			var randomDiceThrow = rand.Intn(100)
 			var playerProbability = probabilities[playerIndex].Probability
-			fmt.Printf("dice says %v, has to beat %v \n", randomDiceThrow, playerProbability)
 			if randomDiceThrow < playerProbability {
 				players += 1
-				fmt.Printf("Adding, players now %v\n", players)
 			}
 		}
 		totalGuests += players
-		fmt.Printf("Total Guests %v\n", totalGuests)
 	}
 
 	var guests = math.Round((float64(totalGuests) / float64(iterations)))
-	fmt.Printf("Final calc %v / %v = %v\n", totalGuests, iterations, guests)
 
 	return MYSELF + int(guests)
 }
