@@ -1,8 +1,11 @@
 package probability
 
-import "testing"
-import "github.com/stretchr/testify/assert"
-import "github.com/mkadlec/player-probability-go/players"
+import (
+	"testing"
+
+	"github.com/mkadlec/player-probability-go/players"
+	"github.com/stretchr/testify/assert"
+)
 
 func TestProbability(t *testing.T) {
 	var playerProbabilities []players.Player
